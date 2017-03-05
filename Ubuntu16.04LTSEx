@@ -1,0 +1,51 @@
+2017-3-4 第一天
+再次安装Ubuntu，记录每天怎么折腾的
+1、设置root密码
+    sudo passwd
+    删除亚马逊图标
+    sudo apt-get remove unity-webapps-common
+    删除libreoffice,用WPS替代
+    sudo apt-get remove libreoffice-common
+    删除不常用软件，看的网上攻略，有的软件后面貌似还需要，有需要再装吧
+    sudo apt-get remove thunderbird totem rhythmbox empthy brasero simple-scan gnome-mahjongg aisleriot gnome-mines  cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install
+    sudo apt-get remove onboard deja-dup
+    自动清理
+    sudo apt-get autoremove
+2、修改host
+3、安装更新 此步耗时较长，需耐心等待，且期间无法安装任何软件，但是不影响下载
+    apt-get update
+    apt-get upgrade
+4、安装必要软件
+    install rar git vim等
+5、安装第三方软件
+    dpkg -i 安装WPS及其字体文件 蓝灯
+            安装搜狗输入法，需要解决依赖 apt-get install -f
+    tar zvxf 安装tar.gz包
+    tar jvxf 安装tar.xz包
+6、美化桌面 参考网址（访问需要采取手段）：http://www.linuxslaves.com/2016/05/macbuntu-mac-os-x-yosmite-theme-for-ubuntu1604.html
+    (1)安装Unity Tweak Tool
+        sudo apt-get install unity-tweak-tool
+    (2)安装主题Mac OS X Yosemite Theme on Ubuntu
+        sudo add-apt-repository ppa:noobslab/macbuntu
+        sudo apt-get update
+        sudo apt-get install macbuntu-os-icons-lts-v7
+        sudo apt-get install macbuntu-os-ithemes-lts-v7
+    (3)安装synapse 超级好用，Ctrl+Space呼出即可进行查找 与输入法热键冲突，可以直接禁用或者调整输入法热键，
+        sudo apt-get install synapse
+    (4)AlbertSpotlight 跟上面的作用差不多，待开发，不过需要自己设置开启热键较困难，可能会与软件冲突
+        sudo apt-get install albert
+    (5)安装Plank Dock's Mac OS Yosemite Themes  这是仿苹果的Dock
+        sudo apt-get install macbuntu-os-plank-theme-lts-v7
+        使用前通过Ubuntu系统设置及Unity Tweak Tool将启动器隐藏
+        Ctrl+鼠标右键点击图标可以进行设置
+    (6)安装字体 consolas必备 下载好后直接双击安装即可
+7、配置环境变量
+    需要配置环境变量的软件可以集中安装在一起，便于进行配置
+    建议将环境变量配置在用户级别，以防配置出错，便于root用户进行修改
+        vim ~/.profile
+        在最后加上如下语句配置java环境变量
+        export JAVA_HOME=/opt/software/jdk1.8.0_121
+        export CALSSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+        export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+        配置node环境变量
+        export PATH=$PATH:/opt/software/node-v6.10.0-linux-x64/bin
