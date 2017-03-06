@@ -25,7 +25,7 @@
 6、美化桌面 参考网址（访问需要采取手段）：http://www.linuxslaves.com/2016/05/macbuntu-mac-os-x-yosmite-theme-for-ubuntu1604.html
     (1)安装Unity Tweak Tool
         sudo apt-get install unity-tweak-tool
-    (2)安装主题Mac OS X Yosemite Theme on Ubuntu
+    (2)安装主题Mac OS X Yosemite Theme on Ubuntu 据说已经到v8了，以后有机会可以尝试一下
         sudo add-apt-repository ppa:noobslab/macbuntu
         sudo apt-get update
         sudo apt-get install macbuntu-os-icons-lts-v7
@@ -49,3 +49,4 @@
         export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
         配置node环境变量
         export PATH=$PATH:/opt/software/node-v6.10.0-linux-x64/bin
+        执行命令 source ~/.profile立即生效
