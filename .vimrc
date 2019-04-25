@@ -1,6 +1,8 @@
 " 设置取消备份，禁止临时文件生成  
 set nobackup  
 set noswapfile  
+" 禁止生成undo文件, un~后缀
+set noundofile
 " 设置在Vim中可以使用鼠标，防止终端无法拷贝  
 set mouse=a 
 
@@ -13,16 +15,9 @@ set showcmd
 " 左下角显示当前Vim模式
 set showmode
 " 修改字符集
-" set encoding=utf-8 " 此项修改的时gui的菜单项编码, 不需要修改
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb2312
 set termencoding=utf-8
-" 禁止生成临时文件
-set nobackup
-set nowritebackup
-set noswapfile
-" 禁止生成undo文件, un~后缀
-set noundofile
 
 " 显示行号  
 set number  
